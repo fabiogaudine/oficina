@@ -1,0 +1,21 @@
+version: '2'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    container_name: baseapp
+    working_dir: /var/www
+    volumes:
+      - ./www/:/var/www
+
+  cursoweb:
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    container_name: baseweb
+    working_dir: /var/www
+    volumes_from:
+      - app
+    ports:
+      - 8222:80

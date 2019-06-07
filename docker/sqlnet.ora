@@ -1,0 +1,12 @@
+AUTOMATIC_IPC = OFF
+TRACE_LEVEL_CLIENT = OFF
+names.directory_path = (TNSNAMES)
+name.default_zone = trf1.gov.br
+names.default_domain = trf1.gov.br
+SQLNET.EXPIRE_TIME = 5
+
+
+
+###parametros do OAS 10g
+#NAMES.DIRECTORY_PATH= (TNSNAMES, LDAP, EZCONNECT, ONAMES, HOSTNAME)
+SQLNET.AUTHENTICATION_SERVICES= (NTS)
