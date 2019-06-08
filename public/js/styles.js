@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\docker\aprendendo-laravel\resources\assets\angular\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /home/fabio/aprendendo-laraval/resources/assets/appang/src/styles.css */"./src/styles.css");
 
 
 /***/ })
