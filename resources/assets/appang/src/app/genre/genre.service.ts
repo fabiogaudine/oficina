@@ -6,19 +6,18 @@ import { HttpClient } from '@angular/common/http';
 
 export class GenreService {
 
-  public genres: Genre[];
-
   constructor(private http: HttpClient) {
-    this.http.get("/api/genre/").subscribe(
-      (vetor: any[]) => {
-       
-   /*     for(let i of vetor)
+/*    this.http.get("/api/genre/").subscribe(
+      (vetor: any[]) => {    
+        for(let i of vetor){
         this.genres.push(
           new Genre(i.id, i.nome)
         );
-        */
-console.log(vetor);
+        console.log(i);
+      }
       }
     )
-   }
+    */
+      }
+
 }

@@ -1,6 +1,8 @@
-<mat-toolbar>
-  <span>My Application</span>
+<mat-toolbar color="primary">
+  <span>Projeto: Laravel + Angular</span>
 </mat-toolbar>
+
+<mat-divider></mat-divider>
 
 
 <app-genre></app-genre>
@@ -8,3 +10,8 @@
 <app-comment></app-comment>
 
 <router-outlet></router-outlet>
+
+<button mat-fab color="primary" class="float-button" (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+

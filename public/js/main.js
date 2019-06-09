@@ -74,7 +74,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <span>My Application</span>\n</mat-toolbar>\n\n\n<app-genre></app-genre>\n<app-film></app-film>\n<app-comment></app-comment>\n\n<router-outlet></router-outlet>"
+module.exports = "<mat-toolbar color=\"primary\">\n  <span>Projeto: Laravel + Angular</span>\n</mat-toolbar>\n\n<mat-divider></mat-divider>\n\n\n<app-genre></app-genre>\n<app-film></app-film>\n<app-comment></app-comment>\n\n<router-outlet></router-outlet>\n\n<button mat-fab color=\"primary\" class=\"float-button\" (click)=\"openDialog()\">\n  <mat-icon>add</mat-icon>\n</button>\n\n"
 
 /***/ }),
 
@@ -405,7 +405,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  genre works!\n</p>\n"
+module.exports = "<mat-divider></mat-divider>\n<div fxLayout=\"row wrap\" fxLayoutAlign=\"space-around stretch\">\n\n</div>\n"
 
 /***/ }),
 
@@ -459,27 +459,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GenreService", function() { return GenreService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _genre__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./genre */ "./src/app/genre/genre.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 
 var GenreService = /** @class */ (function () {
     function GenreService(http) {
+        var _this = this;
         this.http = http;
         this.http.get("/api/genre/").subscribe(function (vetor) {
-            /*     for(let i of vetor)
-                 this.genres.push(
-                   new Genre(i.id, i.nome)
-                 );
-                 */
-            console.log(vetor);
+            for (var _i = 0, vetor_1 = vetor; _i < vetor_1.length; _i++) {
+                var i = vetor_1[_i];
+                _this.genres.push(new _genre__WEBPACK_IMPORTED_MODULE_2__["Genre"](i.id, i.nome));
+                console.log(i);
+            }
         });
     }
     GenreService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]])
     ], GenreService);
     return GenreService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/genre/genre.ts":
+/*!********************************!*\
+  !*** ./src/app/genre/genre.ts ***!
+  \********************************/
+/*! exports provided: Genre */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Genre", function() { return Genre; });
+var Genre = /** @class */ (function () {
+    function Genre(id, nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+    return Genre;
 }());
 
 
