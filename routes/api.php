@@ -13,18 +13,30 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+
+    Route::get('/film', 'FilmController@index');
+    Route::post('/film', 'FilmController@store');
+    Route::delete('/film/{id}', 'FilmController@delete');
+
+    Route::get('/genre', 'GenreController@index');
+    Route::post('/genre', 'GenreController@store');
+    Route::delete('/genre/{id}', 'GenreController@delete');
+
+    Route::get('/comment', 'CommentController@index');
+    Route::post('/comment', 'CommentController@store');
+    Route::delete('/comment/{id}', 'CommentController@delete');
+
 });
 
-Route::get('/film', 'FilmController@index');
-Route::post('/film', 'FilmController@store');
-Route::delete('/film/{id}', 'FilmController@delete');
-
-Route::get('/genre', 'GenreController@index');
-Route::post('/genre', 'GenreController@store');
-Route::delete('/genre/{id}', 'GenreController@delete');
-
-Route::get('/comment', 'CommentController@index');
-Route::post('/comment', 'CommentController@store');
-Route::delete('/comment/{id}', 'CommentController@delete');
