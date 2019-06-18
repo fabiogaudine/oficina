@@ -27,6 +27,10 @@ import { CommentService } from './comment/comment.service';
 
 import {APP_BASE_HREF} from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-
+    
+    MatSortModule,
+    MatPaginatorModule,
+    MatTableModule,
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
