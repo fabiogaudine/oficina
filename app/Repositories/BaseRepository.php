@@ -44,4 +44,10 @@ abstract class BaseRepository
 //        dd($data);
         return $this->modelClass->select($data);
     }
+
+    public function all()
+    {
+        return $this->modelClass->all();
+    }
+
 }

@@ -16,7 +16,7 @@ class GenreController extends Controller
 
     public function index()
     {
-        return $this->classe->paginate();
+        return $this->classe->all();
     }
 
     public function store(Request $request)

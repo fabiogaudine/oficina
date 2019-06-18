@@ -74,7 +74,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n  <span>Projeto: Laravel + Angular</span>\n</mat-toolbar>\n\n<mat-divider></mat-divider>\n\n\n<app-genre></app-genre>\n<app-film></app-film>\n<app-comment></app-comment>\n\n<router-outlet></router-outlet>\n\n<button mat-fab color=\"primary\" class=\"float-button\" (click)=\"openDialog()\">\n  <mat-icon>add</mat-icon>\n</button>\n\n"
+module.exports = "<mat-toolbar color=\"primary\">\n  <span>Projeto: Laravel + Angular</span>\n</mat-toolbar>\n\n<mat-divider></mat-divider>\n\n\n<app-genre></app-genre>\n<app-film></app-film>\n<app-comment></app-comment>\n\n<button mat-fab color=\"primary\" class=\"float-button\" (click)=\"openDialog()\">\n  <mat-icon>add</mat-icon>\n</button>\n\n"
 
 /***/ }),
 
@@ -405,7 +405,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-divider></mat-divider>\n<div fxLayout=\"row wrap\" fxLayoutAlign=\"space-around stretch\">\n\n</div>\n"
+module.exports = "<mat-divider></mat-divider>\n\n<p>teste</p>\n\n<p *ngFor=\"let g of genres\">\n    {{g.id}} - {{g.name}}\n</p>\n\n\n"
 
 /***/ }),
 
@@ -428,9 +428,12 @@ __webpack_require__.r(__webpack_exports__);
 var GenreComponent = /** @class */ (function () {
     function GenreComponent(genreService) {
         this.genreService = genreService;
+        //private genre: Genre[];
+        this.genres = [];
     }
     GenreComponent.prototype.ngOnInit = function () {
-        this.genre = this.genreService.genres;
+        this.genres = this.genreService.genres;
+        console.log(this.genreService.genres);
     };
     GenreComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -469,11 +472,12 @@ var GenreService = /** @class */ (function () {
     function GenreService(http) {
         var _this = this;
         this.http = http;
-        this.http.get("/api/genre/").subscribe(function (vetor) {
+        this.genres = [];
+        console.log(this.http.get("http://localhost:8001/api/genre/"));
+        this.http.get("http://localhost:8001/api/genre/").subscribe(function (vetor) {
             for (var _i = 0, vetor_1 = vetor; _i < vetor_1.length; _i++) {
                 var i = vetor_1[_i];
                 _this.genres.push(new _genre__WEBPACK_IMPORTED_MODULE_2__["Genre"](i.id, i.nome));
-                console.log(i);
             }
         });
     }
@@ -499,9 +503,9 @@ var GenreService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Genre", function() { return Genre; });
 var Genre = /** @class */ (function () {
-    function Genre(id, nome) {
+    function Genre(id, name) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
     }
     return Genre;
 }());

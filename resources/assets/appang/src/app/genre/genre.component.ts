@@ -11,15 +11,13 @@ export class GenreComponent implements OnInit {
 
   //private genre: Genre[];
 
-  public genres: Genre[] = [
-    new Genre(1, "fabio"),
-    new Genre(2, "jose")
-];
+  public genres: Genre[] = [];
 
   constructor(public genreService: GenreService) { }
 
   ngOnInit() {
-    //this.genre = this.genreService.genres;
+    this.genres = this.genreService.genres;
+    console.log(this.genreService.genres);
   }
 
 }

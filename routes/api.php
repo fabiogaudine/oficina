@@ -30,7 +30,6 @@ Route::group([
     Route::post('/film', 'FilmController@store');
     Route::delete('/film/{id}', 'FilmController@delete');
 
-    Route::get('/genre', 'GenreController@index');
     Route::post('/genre', 'GenreController@store');
     Route::delete('/genre/{id}', 'GenreController@delete');
 
@@ -40,3 +39,4 @@ Route::group([
 
 });
 
+Route::get('/genre', 'GenreController@index');
