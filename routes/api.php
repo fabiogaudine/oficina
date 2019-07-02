@@ -24,19 +24,25 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
-
-
-    Route::get('/film', 'FilmController@index');
-    Route::post('/film', 'FilmController@store');
-    Route::delete('/film/{id}', 'FilmController@delete');
-
-    Route::post('/genre', 'GenreController@store');
-    Route::delete('/genre/{id}', 'GenreController@delete');
-
-    Route::get('/comment', 'CommentController@index');
-    Route::post('/comment', 'CommentController@store');
-    Route::delete('/comment/{id}', 'CommentController@delete');
-
 });
 
-Route::get('/genre', 'GenreController@index');
+
+    Route::get('/servico', 'ServicoController@index');
+    Route::post('/servico', 'ServicoController@store');
+    Route::delete('/servico/{id}', 'ServicoController@delete');
+
+    Route::get('/peca', 'PecaController@index');
+    Route::post('/peca', 'PecaController@store');
+    Route::delete('/peca/{id}', 'PecaController@delete');
+
+    Route::get('/proprietario', 'ProprietarioController@index');
+    Route::post('/proprietario', 'ProprietarioController@store');
+    Route::delete('/proprietario/{id}', 'ProprietarioController@delete');
+
+    Route::get('/mecanico', 'MecanicoController@index');
+    Route::post('/mecanico', 'MecanicoController@store');
+    Route::delete('/mecanico/{id}', 'MecanicoController@delete');
+
+    Route::get('/veiculo', 'VeiculoController@index');
+    Route::post('/veiculo', 'VeiculoController@store');
+    Route::delete('/veiculo/{id}', 'VeiculoController@delete');

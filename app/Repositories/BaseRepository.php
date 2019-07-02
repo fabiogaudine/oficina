@@ -25,7 +25,8 @@ abstract class BaseRepository
 
     public function paginate($qtd=15, $campo=1, $ordem='asc' )
     {
-        return $this->modelClass->orderBy($campo, $ordem)->paginate($qtd);
+        //return $this->modelClass->orderBy($campo, $ordem)->paginate($qtd);
+        return $this->modelClass->all();
     }
 
     public function create($data)

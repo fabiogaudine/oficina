@@ -3,16 +3,16 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Facades\DB;
-use App\Models\Comment;
+use App\Models\Veiculo;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 
 
-class CommentRepository extends BaseRepository
+class VeiculoRepository extends BaseRepository
 {
     protected $modelClass;
 
-    public function __construct(Comment $classeBD)
+    public function __construct(Veiculo $classeBD)
     {
         $this->modelClass = $classeBD;
     }

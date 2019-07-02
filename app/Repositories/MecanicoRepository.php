@@ -3,16 +3,16 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Facades\DB;
-use App\Models\Genre;
+use App\Models\Mecanico;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 
 
-class GenreRepository extends BaseRepository
+class MecanicoRepository extends BaseRepository
 {
     protected $modelClass;
 
-    public function __construct(Genre $classeBD)
+    public function __construct(Mecanico $classeBD)
     {
         $this->modelClass = $classeBD;
     }

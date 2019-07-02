@@ -3,16 +3,16 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Facades\DB;
-use App\Models\Film;
+use App\Models\Servico;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 
 
-class FilmRepository extends BaseRepository
+class ServicoRepository extends BaseRepository
 {
     protected $modelClass;
 
-    public function __construct(Film $classeBD)
+    public function __construct(Servico $classeBD)
     {
         $this->modelClass = $classeBD;
     }

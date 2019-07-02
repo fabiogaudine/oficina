@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Genre } from './genre';
+import { Genre } from '../models/service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
